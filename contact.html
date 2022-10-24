@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head><!--information not shown on webpage-->
+        <title>Contact Us | NZ Guides and Tours</title><!--title shown in browser tab-->
+        <link rel="stylesheet" href="css/style2.css"><!--accordian faq-->
+    </head>
+    <body>
+        <header>
+          <img class="logo" src="images/NZ GUIDES T URS.png" alt="NZ Tours Logo">
+        </header>
+        <nav><!--menu/navigation bar-->
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <div class="subnav">
+                <button class="subnavbtn">Tours<i class="fa fa-caret-down"></i></button>
+                <div class="subnav-content">
+                  <a href="#">Walking</a>
+                  <a href="#">Cycling</a>
+                  <a href="#">Kayaking</a>
+                  <a href="guided.html">Guided</a>
+                </div>
+              </div>
+            <a href="contact.html">Contact Us</a>
+            <a href="#">Bookings</a>
+        </nav><!--end of nav-->
+      <div class="row">
+        <div class="first-column">
+        <div class="container">
+          <form name="myForm" onsubmit="return validateForm()" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name..">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Email..">
+            <label for="topic">Topic of Enquire</label>
+            <select id="topic" name="topic">
+              <option value="general">General</option>
+              <option value="bookings">Bookings</option>
+              <option value="complaints">Complaints</option>
+            </select>
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+            <input type="submit" value="Submit">
+          </form>
+        </div><!--end of container form-->
+      </div><!--end of column-->
+        <script>
+          function validateForm() {
+            let name = document.myForm.name.value;
+            let email = document.myForm.email.value;
+            let topic = document.myForm.topic.value;
+            let subject = document.myForm.subject.value;
+
+            if (name == null || name =="") {
+              alert("Name must be filled out");
+              return false;
+            }
+            else if (email == null || email =="") {
+              alert("Email must be filled out");
+              return false;
+            }
+            else if (subject == null || subject =="") {
+              alert("Subject must be filled out");
+              return false;
+            }
+            alert("Thank you!")
+          }
+          </script>
+        <div class="second-column">
+        <div class="FAQ">
+        <h2>FAQs</h2>
+        <p>Updated September 2022</p>
+
+        <button class="accordion">Do we need to do any driving on the multi-day tours?</button>
+        <div class="panel">
+        <p>Not at all! Our tour guides will also act as your driver. However if you are required to drive all fuel and rental car costs are included in your packages!
+        </p>
+        </div>
+
+        <button class="accordion">How many people can go on a guided tour?</button>
+        <div class="panel">
+        <p>We plan our tours for individuals, for those wanting a larger group please contact us for more imformation and pricing.</p>
+        </div>
+
+        <button class="accordion">What is your cancellation and refund policy?</button>
+        <div class="panel">
+        <p>We try our best to minimise cancellation costs if they do arise. There is however a considerable amount of admin involved in booking tours and itineraries, plus cancellation costs on our end so there will be a small fee if you decide to cancel your trip.</p>
+        </div>
+
+        <button class="accordion">What clothes will I need to take?</button>
+        <div class="panel">
+        <p>We recommend dressing for the occasion, informal and relaxed is the best way to go!
+          For our warmer climates we recommend a simple t-shirt and shorts. Walking shoes are a must... Hiking shoes or shoes with a great grip are even better!
+          For our colder climates we recommend a long sleeve top, pants, and a good thick jacket. If you are joinging us in the snow we do have rental snowsuits available to avoid too much baggage but if you would like to bring your own that is also welcome. 
+          </p>
+        </div>
+        </div><!--end of FAQ-->
+      </div><!--end of column-->
+    </div><!--end of row-->
+        <!--adjust the script to match the code-->
+        <script>
+            let acc = document.getElementsByClassName("accordion");
+            let i;
+            
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                let panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                  panel.style.maxHeight = null;
+                } else {
+                  panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+              });
+            }
+        </script>
+    </body>
+    <footer>
+      <div class="footer-row">
+        <div class="footer-column">
+          <h1>Tours</h1>
+          <p>Walking</p>
+          <p>Cycling</p>
+          <p>Kayaking</p>
+          <p>Guided</p>
+        </div><!--end of column-->
+        <div class="footer-column">
+          <h1>Company</h1>
+          <p>About Us</p>
+          <p>Contact Us</p>
+          <p>Careers</p>
+        </div><!--end of column-->
+        <div class="footer-column">
+          <h1>Our Socials</h1>
+          <p>Facebook</p>
+          <p>Instagram</p>
+        </div><!--end of column-->
+      </div><!--end of row-->
+      <p>2022 NZ Tours LTD. All rights reserved.</p>
+  </footer><!--end of footer-->
+</html>
